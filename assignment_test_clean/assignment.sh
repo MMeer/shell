@@ -31,7 +31,6 @@ mv ./rawdata ./data/raw
 ls ll ./data/raw
 
 # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_logs
-# we could also do this operation all in one command like so: mkdir -p ./data/processed/{server_logs,user_logs,event_logs}
 mkdir ./data/processed
 mkdir ./data/processed/{server_logs,user_logs,event_logs}
 
@@ -50,7 +49,7 @@ cp ./data/raw/*event*.log ./data/raw ./data/processed/event_logs
 rm -rf ./data/raw/*ipaddr* && rm -rf ./data/processed/user_logs/*ipaddr*
 
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-touch ./data/inventory.txt && find ./data/processed > ./data/inventory.txt
+touch ./data/inventory.txt && ls -ll >> ./data/inventory.txt
 
 # for step 8, we could also do the same like so using overwrite operator unlike append operator I used above: ls -ll > ./data/inventory.txt
 
